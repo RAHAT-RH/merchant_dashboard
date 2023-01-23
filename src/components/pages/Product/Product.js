@@ -78,11 +78,6 @@ const Product = () => {
             })
     }, [product, edit])
 
-    const listArray = details?.data
-    // console.log("array:", listArray)
-
-    // const productIds = listArray?.map(product => product.id);
-    // console.log(productIds);
 
 
     // details
@@ -104,9 +99,7 @@ const Product = () => {
 
     console.log(showDetails?.data)
 
-    // const formData = new FormData();
-    // formData.append("product_id", productId)
-    // formData.append("name", productname)
+   
 
 
 
@@ -304,14 +297,6 @@ const Product = () => {
             {/* card */}
 
 
-
-
-            {/* card */}
-
-
-            {/* The button to open modal */}
-            {/* <label htmlFor="adding-product" className="btn">open modal</label> */}
-
             {/*Add product create modal  */}
 
 
@@ -456,12 +441,12 @@ const Product = () => {
                 <div className="modal-box w-1/2 max-w-auto">
                     {/* <form onSubmit={handleSubmit(handleCreateCategory)} className="space-y-4 md:space-y-6"> */}
                     <div>
-                        <label htmlFor="text" className="block mb-2 text-sm font-medium text-gray-900 text-left">Shop In No:</label>
+                        <label htmlFor="text" className="block mb-2 text-sm font-medium text-gray-900 text-left">Product Id:</label>
                         <input type="text" onChange={(e) => setProductId(e.target.value)} className="bg-gray-50 border border-gray-300 text-[#0A0A0A] text-sm rounded-lg focus:ring-black focus:border-black block w-full p-2.5" placeholder="123456789" />
                         {/* <p className='text-left text-xs text-red-500'>{errors.shopId?.message}</p> */}
                     </div>
                     <div>
-                        <label htmlFor="text" className="block mb-2 text-sm font-medium text-gray-900 text-left">Shop Name</label>
+                        <label htmlFor="text" className="block mb-2 text-sm font-medium text-gray-900 text-left">Product Name</label>
 
                         <input type='text' onChange={(e) => setProductname(e.target.value)} placeholder="category name" className="bg-gray-50 border border-gray-300 text-[#0A0A0A] text-sm rounded-lg focus:ring-black focus:border-black block w-full p-2.5" required="" />
                         {/* <p className='text-left text-xs text-red-500'>{errors.categoryName?.message}</p> */}
