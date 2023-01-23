@@ -41,9 +41,9 @@ const Sidebar = () => {
 
         { title: "Home", src: <RiDashboard3Line />, to: '/' },
         { title: "Profile", src: <RiAccountCircleLine />, to: '/profile' },
-        { title: "Add Category", src: <RiAddCircleLine />, gap: true, to: '/add-category' },
-        { title: "Shop", src: <RiStore3Line />, to: '/shop' },
-        { title: "Contact", src: <RiContactsBook2Line />, to: '/contact' },
+        { title: "Add Shop", src: <RiAddCircleLine />, gap: true, to: '/shop' },
+        { title: "Add Category", src: <RiStore3Line />, to: '/add-category' },
+        { title: "Product", src: <RiContactsBook2Line />, to: '/products' },
         { title: "Search", src: <RiSearchLine />, to: '/search' },
         { title: "Message", src: <RiMessage2Line />, to: '/message' },
         { title: "Files ", src: <RiFolder2Line />, gap: true, to: '/file' },
@@ -54,7 +54,7 @@ const Sidebar = () => {
 
     return (
         <div className="fixed top-0 left-0 z-30">
-            <div className={` ${open ? "w-72" : "w-20 "} bg-[#F3F3F3] h-screen  shadow-2xl p-5 pt-8 relative duration-300 `}>
+            <div className={` ${open ? "w-72" : "w-20"} bg-[#F3F3F3] h-screen  shadow-2xl p-5 pt-8 relative duration-300 `}>
                 <img src={control} alt='' className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple border-2 rounded-full  ${!open && "rotate-180"}`} onClick={() => setOpen(!open)} />
                 <div className="flex gap-x-4 items-center">
                     <img src={logo} alt='' className={`cursor-pointer duration-500 ${open && "rotate-[360deg]"}`} />

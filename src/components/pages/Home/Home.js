@@ -16,11 +16,11 @@ const Home = () => {
         }).then(res => res.json())
             .then(data => setProfile(data))
     }, [])
-    
+
 
     return (
-        <div className='home_section sm:ml-[100px]'>
-            <div className="container" style={{ maxWidth: "1100px" }}>
+        <div className='ml-[90px] pr-5'>
+            <div className="container">
                 <h1 className='text-3xl text-center p-3 text-black'>Welcome to Dashboard</h1>
                 <div className="grid lg:grid-cols-2 w-full sm:grid-cols-3 gap-5 ">
 

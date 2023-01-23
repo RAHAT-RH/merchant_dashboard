@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { toast, Toaster } from 'react-hot-toast';
 import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
 import { Link } from 'react-router-dom';
 import TokenAuth from '../../Authentication/TokenAuth/TokenAuth';
@@ -25,6 +26,11 @@ const Signup = () => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
+                if (data.success === true) {
+                    toast.success("Successfully Create Account")
+                } else {
+                    toast.error(data.message)
+                }
                 setToken(data.data.access_token)
                 reset()
                 console.log(data)
@@ -177,6 +183,7 @@ const Signup = () => {
                     </div>
                 </div>
             </section>
+            <Toaster></Toaster>
         </div>
     );
 };
