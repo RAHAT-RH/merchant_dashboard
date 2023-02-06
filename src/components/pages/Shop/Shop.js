@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast, Toaster } from 'react-hot-toast';
 
+
 const Shop = () => {
 
     const [name, setName] = useState('');
@@ -75,8 +76,10 @@ const Shop = () => {
                 if (data.success === true) {
                     toast.success("Successfully Updated")
                     setUpdate(data)
+                    document.getElementById("edit-shop-details").click();
                 } else {
                     toast.error("Something wrong")
+                    
                 }
             })
             .catch(err => {
@@ -270,7 +273,7 @@ const Shop = () => {
 
                 <input type="checkbox" id="edit-shop-details" className="modal-toggle" />
                 <div className="modal mx-auto">
-                    <div className="modal-box w-11/12 max-w-5xl">
+                    <div className="modal-box w-6/12 max-w-xl">
 
 
 
@@ -311,6 +314,8 @@ const Shop = () => {
                 </div>
             </div>
             <Toaster />
+
+            
         </div>
     );
 };

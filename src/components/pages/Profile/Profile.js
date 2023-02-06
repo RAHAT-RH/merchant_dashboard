@@ -2,8 +2,8 @@ import React from 'react';
 
 const Profile = () => {
     return (
-        <div className='sm:ml-[40px]'>
-            <div className="container overflow-x-auto" style={{ maxWidth: "1000px" }}>
+        <div className='ml-[90px] pr-5'>
+            <div className="container " style={{ maxWidth: "1000px" }}>
                 <table className="table table-zebra w-full sm:ml-[40px] ">
                     {/* table head */}
                     <thead>

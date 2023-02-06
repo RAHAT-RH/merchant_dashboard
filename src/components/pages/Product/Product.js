@@ -8,7 +8,7 @@ const Product = () => {
     const [listproducts, setListPorducts] = useState([]);
     const [productId, setProductId] = useState('');
     const [productname, setProductname] = useState('');
-    const [details, setDetails] = useState();
+    // const [details, setDetails] = useState();
     const [edit, setEdit] = useState('')
 
 
@@ -27,7 +27,7 @@ const Product = () => {
         formData.append("main_image", mainImage[0]);
         formData.append("gallery_image", galleryImage[0]);
 
-        // console.log(name, categoryId, price, offerPrice, status, galleryImage, mainImage)
+       
 
         // api fetching
 
@@ -43,7 +43,9 @@ const Product = () => {
                 if (data.success === true) {
                     toast.success("Successfully create a shop");
                     setProduct(data)
+                    document.getElementById("adding-product").click();
                     console.log(data);
+                    reset();
                 } else {
                     toast.error(data.message)
                     // console.log(data)
@@ -71,10 +73,8 @@ const Product = () => {
             }
         }).then(res => res.json())
             .then(data => {
-                // console.log(data.data)
                 setListPorducts(data?.data)
-                setDetails(data)
-                // setDetails(data?.data)
+                // console.log(data.data)
             })
     }, [product, edit])
 
@@ -97,12 +97,9 @@ const Product = () => {
             })
     }
 
-    console.log(showDetails?.data)
+    // console.log(showDetails?.data)
 
    
-
-
-
     // console.log(updatedProduct)
     const updateProduct = async () => {
 
@@ -131,19 +128,11 @@ const Product = () => {
                 console.log(err)
             })
     }
-
-
-
     // Edit and update api end
-
-
-
-
 
 
     // console.log(listproducts)
     // Product list api fetching End
-
 
     return (
         <div className=''>
@@ -153,7 +142,7 @@ const Product = () => {
                     <h4 className="font-bold text-gray-500 p-1 ">Dashboard</h4>
 
                 </div>
-                <p className="text-gray-400 p-1">30th October 2020 | 1st November 2020</p>
+                <p className="text-gray-400 p-1">30th October 2023 | 1st November 2020</p>
             </div>
 
             {/* Responsive left control */}
@@ -277,7 +266,7 @@ const Product = () => {
                                             <li className="flex items-center space-x-3 decoration-gray-500">
                                                 {/* <!-- Icon --> */}
                                                 Status:
-                                                <span className="text-base font-normal leading-tight pl-3 text-gray-500"><div className="badge badge-lg"> <div className="badge badge-lg"> 987,654</div></div></span>
+                                                <span className="text-base font-normal leading-tight pl-3 text-gray-500"><div className="badge badge-lg"> <div className="badge badge-lg">{allList?.status}</div></div></span>
                                             </li>
                                         </ul>
                                         <label htmlFor="details_modal" onClick={() => showDetailsModel(allList?.id)} type="button" className="text-white  bg-black focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">See Details</label>

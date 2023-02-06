@@ -100,6 +100,10 @@ const Signup = () => {
                                             minLength: {
                                                 value: 11,
                                                 message: "must be exceed 11 characters"
+                                            },
+                                            maxLength:{
+                                                value: 11,
+                                                message: "must be exceed 11 characters"
                                             }
                                         })}
                                     />

@@ -68,7 +68,7 @@ const AddCategory = () => {
     // console.log(id)
 
     const allLists = lists?.data;
-
+    console.log(allLists)
 
     return (
         <div className='ml-[90px] pr-5'>
@@ -130,7 +130,6 @@ const AddCategory = () => {
 
                 </div>
 
-
                 {/* {allLists.length} */}
 
                 <div>
@@ -144,14 +143,14 @@ const AddCategory = () => {
 
                                     <div key={index} className="card-body">
                                         <div className="flex justify-between items-center">
-                                            <span className='font-semibold text-2xl sm:text-xl'>{allList.shop.name}</span>
-                                            <span className='text-sm'>shop id: {allList.shop_id}</span>
+                                            <span className='font-semibold text-2xl sm:text-xl'>{allList?.name}</span>
+                                            <span className='text-sm'>shop id: {allList?.shop_id}</span>
                                         </div>
-                                        <p className='text-left text-sm'>Address: {allList.shop.address}</p>
+                                        <p className='text-left text-sm'>Address: {allList?.shop?.address}</p>
 
-                                        <span className='text-left pl-5'>Category Name: {allList.name}</span>
-                                        <span className='text-left pl-5'>Category Id: {allList.id}</span>
-                                        <span className='text-left pl-5'>Status:  <span className="badge badge-sm p-2">{allList.status}</span></span>
+                                        <span className='text-left pl-5'>Category Name: {allList?.name}</span>
+                                        <span className='text-left pl-5'>Category Id: {allList?.id}</span>
+                                        <span className='text-left pl-5'>Status:  <span className="badge badge-sm p-2">{allList?.status}</span></span>
                                     </div>
 
                                 </div>
