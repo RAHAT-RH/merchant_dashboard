@@ -18,8 +18,7 @@ const Sidebar = () => {
             headers: {
                 "content-type": "application/json",
                 "X-Requested-With": "XMLHttpRequest",
-                "authorization": `Bearer ${localStorage.getItem("token")}`
-                
+                "authorization": `Bearer ${localStorage.getItem("token")}`             
             },
             
         }).then(res =>res.json() )
